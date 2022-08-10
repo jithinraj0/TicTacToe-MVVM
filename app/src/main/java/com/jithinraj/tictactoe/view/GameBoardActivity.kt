@@ -17,6 +17,9 @@ class GameBoardActivity : AppCompatActivity() {
     private lateinit var activityGameBoardBinding: ActivityGameBoardBinding
     private val gameViewModel: GameViewModel by lazy { ViewModelProvider(this).get(GameViewModel::class.java) }
 
+    companion object{
+        const val DELAY_IN_MILLIS:Long=500
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +47,7 @@ class GameBoardActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed(Runnable {
             gameViewModel.resetGame()
             invalidateGameBoard()
-        }, 500)
+        }, DELAY_IN_MILLIS)
     }
 
     private fun showGameResult(message: String) {
