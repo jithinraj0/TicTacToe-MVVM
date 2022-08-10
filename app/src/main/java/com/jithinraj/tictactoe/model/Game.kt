@@ -52,6 +52,7 @@ class Game(playerOne: String,playerTwo: String) {
 
 
     fun isFull() = cell.isFull(cells)
+
     fun switchPlayer() = when (currentPlayer) {
         player1 -> {
             currentPlayer = player2

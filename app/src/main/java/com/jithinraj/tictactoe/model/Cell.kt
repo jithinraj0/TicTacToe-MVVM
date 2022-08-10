@@ -1,5 +1,7 @@
 package com.jithinraj.tictactoe.model
 
+import android.util.Log
+
 class Cell(var player: Player?) {
     companion object {
         const val INDEX_ZERO = 0
@@ -41,6 +43,7 @@ class Cell(var player: Player?) {
             }
         }
         val comparisonBase = cells[INDEX_ZERO]
+       // Log.d("zz",);
         return (INDEX_ONE until cells.size).all { isPlayerValuesAreSame(comparisonBase, cells, it) }
     }
 
